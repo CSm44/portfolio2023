@@ -1,0 +1,445 @@
+// @import "buttons.scss";
+$color__primary: #f77f00;
+$color__secondary: #003049;
+$color__accent: red;
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: $color__secondary;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 40px;
+  height: 4rem;
+
+  svg {
+    width: fit-content;
+    height: 4rem;
+    margin: auto;
+  }
+
+  nav {
+    text-transform: lowercase;
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      gap: 1em;
+      height: 2em;
+
+      li {
+        margin: auto 10px;
+        width: fit-content;
+
+        &:hover {
+          border-bottom: solid 2px $color__primary;
+          transform: scale(0.95);
+          transition: transform 200ms;
+        }
+      }
+
+      a {
+        width: fit-content;
+        align-items: center;
+        list-style: none;
+        text-decoration: none;
+        color: $color__primary;
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+// might have to fix this oops
+.mainContainer {
+  display: flex;
+  flex-wrap: row wrap;
+  margin: 2em 5em;
+  justify-content: center;
+
+  .infoContainer {
+    background-color: $color__primary;
+    width: 60%;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+
+    h1 {
+      text-transform: lowercase;
+      margin: auto;
+      width: 70%;
+      background-color: $color__primary;
+      color: $color__secondary;
+      cursor: default;
+
+    }
+
+    p {
+      text-transform: lowercase;
+      width: 90%;
+      margin: auto;
+      padding: 20px;
+      background-color: $color__primary;
+      color: $color__secondary;
+      font-size: 20pt;
+      text-align: center;
+      cursor: default;
+
+      em {
+        background-color: $color__primary;
+        color: $color__secondary;
+      }
+    }
+  }
+}
+
+.portrait-container {
+  width: 40%;
+  margin-right: 5%;
+  display: flex;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba($color: black, $alpha: .30);
+  }
+}
+
+.socialRowContainer {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+
+  a {
+    height: fit-content;
+    border-radius: 100px;
+    cursor: default;
+    margin: 20px;
+    text-decoration: none;
+    fill:rgba(247, 127, 0, 1);
+
+    svg {
+      fill: #000;
+
+      &:hover {
+        fill: $color__primary;
+      }
+    }
+  }
+}
+
+.bodyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  // *****************************
+
+  .portfolioSlide {
+    // height: 600px;
+    // height: 100vh;
+    height: 80vh;
+    text-align: center;
+    position: relative;
+    cursor: default;
+    margin: auto;
+    // animation: slideColor 10s forwards infinite;
+
+    .setTitle {
+      line-height: 100px;
+      font-size: 60px;
+      color: #fff;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+      margin-left: -300px;
+
+      .rotatingWords {
+        display: inline-block;
+        position: relative;
+
+        div {
+          display: inline-block;
+          position: absolute;
+          top: -200px;
+          transform: rotateX(-90deg);
+          opacity: 0;
+          text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+          animation-timing-function: ease;
+
+          &:nth-child(1) {
+            animation: rollDown 10s forwards infinite;
+            color: $color__primary;
+          }
+
+          &:nth-child(2) {
+            animation: rollDown2 10s forwards infinite;
+            color: $color__primary;
+          }
+
+          &:nth-child(3) {
+            animation: rollDown3 10s forwards infinite;
+            color: $color__primary;
+          }
+        }
+      }
+    }
+  }
+
+  // *****************************
+
+  .mainWorksContainer {
+    display: flex;
+    flex-flow: column wrap;
+    display: grid;
+    min-height: 20em;
+    position: relative;
+    // max-height: fit-content;
+    height: 150vh;
+    margin: 10px auto;
+    background: rgb(252, 191, 73);
+    background: linear-gradient(
+      0deg,
+      rgba(252, 191, 73, 1) 0%,
+      rgba(255, 162, 64, 1) 50%,
+      rgba(247, 127, 0, 1) 100%
+    );
+
+    #row-two,
+    #worksTwo {
+      flex-flow: row-reverse;
+      align-self: flex-end;
+    }
+
+    .rows {
+      display: flex;
+      height: 50vh;
+      width: 100%;
+      justify-content: space-between;
+      background: transparent;
+    }
+
+    .worksContainer {
+      width: 33%;
+      height: 40vh;
+      // margin: 20px 5px;
+      margin: auto 5px;
+      display: flex;
+      border-radius: 30px;
+      // border: solid 2px rgba(0, 48, 73, .5);
+      box-shadow: 0 0 0.5em $color__secondary;
+      // position: absolute;
+      background: transparent;
+
+      .worksPhoto {
+        border: solid 1px black;
+        height: 90%;
+        width: 90%;
+        margin: auto;
+        display: flex;
+
+        a {
+          img {
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+
+      .worksInfo {
+        display: none;
+      }
+    }
+
+    h4 {
+      display: none;
+    }
+  }
+
+  .worksSection {
+    background: rgb(252, 191, 73);
+    background: linear-gradient(
+      0deg,
+      rgba(252, 191, 73, 1) 0%,
+      rgba(255, 162, 64, 1) 50%,
+      rgba(247, 127, 0, 1) 100%
+    );
+  }
+  // on hover
+  .worksContainer {
+    &:hover,
+    &:focus {
+      display: flex;
+      justify-content: space-around;
+      margin: 5vh 1%;
+      width: 98%;
+      position: absolute;
+      transition: 400ms ease;
+
+      .worksPhoto {
+        border: solid 1px black;
+        display: flex;
+        transform: scale(150%);
+        width: 33%;
+      }
+
+      .worksInfo {
+        display: flex;
+        align-self: center;
+        width: 20%;
+        margin: 30px;
+        text-align: center;
+        line-height: 1.5;
+        cursor: default;
+        animation: textTrans 2500ms;
+        background: transparent;
+      }
+
+      h4 {
+        display: inline-block;
+        align-self: center;
+        margin: 30px;
+        text-align: center;
+        font-size: 25px;
+        line-height: 1.5;
+        cursor: default;
+        animation: textTrans 2500ms;
+        background: transparent;
+      }
+    }
+  }
+}
+
+.quotes {
+  display: flex;
+  height: 20%;
+  min-width: fit-content;
+  max-width: 20ch;
+  margin: auto 20%;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.6;
+  cursor: default;
+  background: transparent;
+
+  p {
+    background: transparent;
+  }
+}
+
+.contact-container {
+  // border: solid 2px yellow;
+  border-radius: 30px;
+  width: 40rem;
+  height: 33rem;
+  display: flex;
+  margin: auto;
+  box-shadow: 10px 10px 10px rgba($color: black, $alpha: .30);
+  background-color: darken($color: $color__secondary, $amount: 3%);
+  text-transform: lowercase;
+
+  .contact-main {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    height: 30rem;
+    margin: auto;
+    background-color: transparent;
+
+    .contact-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 30px;
+      box-shadow: 10px 10px 10px rgba($color: black, $alpha: .30);
+      background-color: darken($color: $color__primary, $amount: 15%);
+      width: 100%;
+      height: 30%;
+      margin: auto;
+
+      .contact-label {
+        font-size: 20px;
+        color: white;
+        background-color: transparent;
+        cursor: default;
+      }
+
+      .contact-links {display: none;}
+    }
+  }
+
+// contact cards on hover
+
+  .contact-section:hover {
+    background-color: $color__primary;
+    transform: scale(1.1);
+    transition: transform 500ms;
+  
+    .contact-label {display: none;}
+  
+    .contact-links {
+      display: flex;
+      width: 40%;
+      justify-content: space-around;
+      background-color: transparent;
+      transform: translateX(center);
+      z-index: 1;
+  
+      a {
+        color: white;
+        background-color: transparent;
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+      svg {
+        fill: $color__secondary;
+        background-color: transparent;
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: auto;
+
+  .footerContainer {
+    display: flex;
+    width: 100%;
+
+    color: #fff;
+
+    h3 {
+      cursor: default;
+      background-color: black;
+      padding: 10px;
+      width: 100%;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+  }
+}
+
+@import "mixin";
